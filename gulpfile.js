@@ -53,7 +53,7 @@ gulp.task('reload', ['less', 'js'], function(){
 gulp.task('watch', function() {
   // Watch .less files
   gulp.watch('./assets/less/*.less', ['less', 'reload']);
-  gulp.watch('./assets/css/*.css', ['css', 'reload']);
+  gulp.watch('./assets/css/*.css', ['reload']);
   gulp.watch('./assets/js/*.js', ['js', 'reload']);
   gulp.watch(['./**/*.html'], ['reload']);
 });
