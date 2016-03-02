@@ -5,13 +5,20 @@
   <meta name="viewport" content="initial-scale=1.0">
   <title>Självklart väder</title>
   <link href="https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans:300" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/assets/css/standardize.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css"/>
   <link rel="stylesheet" href="/assets/css/index.css">
 </head>
-<body class="body clearfix">
-
-    <div id="weather" class="weather"></div>
-    <div id="weather2" class="weather"></div>
+<body class="clearfix">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 weather-box-one text-center">
+        <div id="weather" class="weather"></div>
+      </div>
+      <div class="col-md-6 weather-box-two text-center">
+        <div id="weather2" class="weather"></div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>

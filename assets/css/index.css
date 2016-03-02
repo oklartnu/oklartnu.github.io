@@ -2,6 +2,15 @@
   Docs at http://http://simpleweatherjs.com
 */
 
+body {
+  color: #fff;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
 @font-face {
     font-family: 'weather';
     src: url('/assets/css/font/artill_clean_icons-webfont.eot');
@@ -12,26 +21,17 @@
     font-style: normal;
 }
 
-body {
-  padding: 45px 0;
-  font: 13px 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  background: #1192d3;
+i {
+  color: #fff;
+  font-family: weather;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.0;
+  text-transform: none;
 }
 
 .weather {
-  width: 500px;
-  margin: 0px auto;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.weather h2 {
-  margin: 0 0 8px;
-  color: #fff;
-  font-size: 150px;
-  font-weight: 300;
-  text-align: center;
-  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .weather ul {
@@ -40,30 +40,51 @@ body {
 }
 
 .weather li {
-  background: #fff;
-  background: rgba(255,255,255,0.90);
-  padding: 20px;
-  display: inline-block;
   border-radius: 5px;
+  display: inline-block;
+  font-weight: 300;
+  padding: 20px;
+}
+
+.weather-icon i {
+  font-size: 300px;
 }
 
 .weather .currently {
   margin: 0 20px;
 }
 
-#weather2 {
-  border-top: 2px solid #1A8BC4;
-  margin-top: 45px;
+li.forecast {
 }
 
-i {
-  color: #fff;
-  font-family: weather;
-  font-size: 150px;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1.0;
-  text-transform: none;
+li.forecast i {
+  display: block;
+  font-size: 40px;
+}
+
+.forecast-temp-high {
+  font-weight: bold;
+}
+
+.forecast-temp-low {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.forecast-day {
+  display: block;
+  text-transform: capitalize;
+}
+
+.weather-box-one {
+  background-color: #F2B441;
+  height: 100vh;
+  min-height: 580px;
+}
+
+.weather-box-two {
+  background-color: #F26B5E;
+  height: 100vh;
+  min-height: 580px;
 }
 
 .icon-0:before { content: ":"; }

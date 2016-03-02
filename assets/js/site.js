@@ -5,10 +5,19 @@ $(document).ready(function() {
     location: 'Lund Sweden',
     unit: 'c',
     success: function(weather) {
-      html = '<h2><i class="icon-'+weather.code+'"></i>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
-      html += '<ul><li>'+weather.city+', '+weather.country+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-      html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li></ul>';
+      var windSpeedMS = Math.round(weather.wind.speed / 3.6);
+
+      html = '<div class="weather-icon"><i class="icon-'+weather.code+'"></i></div>';
+      html += '<p><strong>'+weather.city+'</strong>&nbsp;'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+      html += '<ul><li>'+weather.currently+'</li>';
+      html += '<li>'+weather.wind.direction+' '+windSpeedMS+' m/s</li></ul>';
+      html += '<ul>';
+      for(var i=0;i<weather.forecast.length;i++) {
+        html += '<li class="forecast"><i class="icon-'+weather.forecast[i].code+'"></i>';
+        html += '<span class="forecast-temp-high">'+weather.forecast[i].high+'</span> <span class="forecast-temp-low">'+weather.forecast[i].low+'</span>';
+        html += '<span class="forecast-day">'+weather.forecast[i].day+'</span></li>';
+      }
+      html += '</ul>';
 
       $("#weather").html(html);
     },
@@ -23,10 +32,19 @@ $(document).ready(function() {
     location: 'Patamalm, Sweden',
     unit: 'c',
     success: function(weather) {
-      html = '<h2><i class="icon-'+weather.code+'"></i>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
-      html += '<ul><li>'+weather.city+', '+weather.country+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-      html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li></ul>';
+      var windSpeedMS = Math.round(weather.wind.speed / 3.6);
+
+      html = '<div class="weather-icon"><i class="icon-'+weather.code+'"></i></div>';
+      html += '<p><strong>'+weather.city+'</strong>&nbsp;'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+      html += '<ul><li>'+weather.currently+'</li>';
+      html += '<li>'+weather.wind.direction+' '+windSpeedMS+' m/s</li></ul>';
+      html += '<ul>';
+      for(var i=0;i<weather.forecast.length;i++) {
+        html += '<li class="forecast"><i class="icon-'+weather.forecast[i].code+'"></i>';
+        html += '<span class="forecast-temp-high">'+weather.forecast[i].high+'</span> <span class="forecast-temp-low">'+weather.forecast[i].low+'</span>';
+        html += '<span class="forecast-day">'+weather.forecast[i].day+'</span></li>';
+      }
+      html += '</ul>';
 
       $("#weather2").html(html);
     },
